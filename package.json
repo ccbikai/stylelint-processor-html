@@ -1,0 +1,27 @@
+{
+  "name": "stylelint-processor-html",
+  "version": "1.0.0",
+  "description": "stylelint-processor-html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccbikai/stylelint-processor-html.git"
+  },
+  "keywords": [
+    "stylelint",
+    "stylelint-processor",
+    "stylelint-processor-html"
+  ],
+  "author": "ccbikai <ccbikai@qq.com> (http://miantiao.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ccbikai/stylelint-processor-html/issues"
+  },
+  "homepage": "https://github.com/ccbikai/stylelint-processor-html#readme",
+  "dependencies": {
+    "htmlparser2": "^3.9.1"
+  }
+}
