@@ -1,7 +1,9 @@
 /**
- * From https://github.com/stylelint/stylelint/blob/master/src/__tests__/fixtures/processor-html.js
+ * From https://github.com/stylelint/stylelint/blob/7.2.0/src/__tests__/fixtures/processor-html.js
  */
+
 'use strict';
+
 const htmlparser = require('htmlparser2');
 
 /**
