@@ -89,26 +89,32 @@ function styleTagsFromHtmlExtracter(code) {
 }
 
 module.exports = function() {
-    let extractMap = [];
+    let extractMaps = [];
 
     return {
-        code(code) {
+        code(code, filepath) {
             const extracted = styleTagsFromHtmlExtracter(code);
-
-            extractMap = extracted.map;
+            extractMaps.push({
+                filepath: filepath,
+                map: extracted.map
+            });
             return extracted.code;
         },
 
-        result(result) {
+        result(result, filepath) {
             result.warnings = result.warnings.map(warning => {
-                const map = extractMap[warning.line] || {};
-
+                let extractMap = extractMaps.filter((map) => {
+                    return map.filepath === filepath;
+                });
+                const map = extractMap[0]['map'][warning.line] || {};
+                
                 if (map.line) {
                     warning.line = map.line;
                 }
                 warning.column = (map.index || 0) + warning.column;
                 return warning;
             });
+
             return result;
         },
     };
